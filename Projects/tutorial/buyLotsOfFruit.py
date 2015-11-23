@@ -33,7 +33,11 @@ def buyLotsOfFruit(orderList):
     Returns cost of order
     """
     totalCost = 0.0
-    "*** YOUR CODE HERE ***"
+    for fruit_pound in orderList:
+        if (fruit_pound[0] not in fruitPrices):
+            print "Error: %s is not recognizable" % fruit_pound[0]
+            return None
+        totalCost += fruitPrices[fruit_pound[0]] * fruit_pound[1]
     return totalCost
 
 # Main Method

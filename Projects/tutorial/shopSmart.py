@@ -28,8 +28,14 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    "*** YOUR CODE HERE ***"
-    return None
+    res = None
+    lowestPrice = 2 ** 32 - 1
+    for shop in fruitShops:
+      price = shop.getPriceOfOrder(orderList)
+      if price < lowestPrice:
+        lowestPrice = price
+        res = shop
+    return res
 
 if __name__ == '__main__':
   "This code runs when you invoke the script from the command line"
